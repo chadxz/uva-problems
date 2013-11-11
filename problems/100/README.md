@@ -10,21 +10,12 @@ Problems in Computer Science are often classified as belonging to a certain clas
 Consider the following algorithm:
 
 ```
-		1. 		 input n
-
-		2. 		 print n
-
-
-		3. 		 if n = 1 then STOP
-
-
-		4. 		 		 if n is odd then  tex2html_wrap_inline44
-
-
-		5. 		 		 else  tex2html_wrap_inline46
-
-
-		6. 		 GOTO 2
+1.  input n
+2.  print n
+3.  if n = 1 then STOP
+4.  if n is odd then (n <-- 3n + 1)
+5.  else (n <-- n / 2)
+6.  GOTO 2
 ```
 
 
