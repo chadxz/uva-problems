@@ -8,11 +8,11 @@ module.exports = function(grunt) {
       options: {
         jshintrc: '.jshintrc'
       },
-      gruntfile: {
-        src: 'Gruntfile.js'
-      },
       all: {
-        src: ['problems/**/*.js']
+        src: [
+          '*.js',
+          'problems/**/*.js'
+        ]
       }
     },
     mochaTest: {
@@ -21,14 +21,10 @@ module.exports = function(grunt) {
           ui: 'bdd',
           reporter: 'spec'
         },
-        src: ['problems/**/*_test.js']
+        src: ['problems/**/*_spec.js']
       }
     },
     watch: {
-      gruntfile: {
-        files: '<%= jshint.gruntfile.src %>',
-        tasks: ['jshint:gruntfile']
-      },
       all: {
         files: '<%= jshint.all.src %>',
         tasks: ['jshint:all', 'mochaTest']
