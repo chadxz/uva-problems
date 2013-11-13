@@ -1,32 +1,25 @@
 // brute force implementation
-function getCycleLength() {
+
+var getIntervals = require('./getIntervals');
+
+function getCycleLengths() {
   "use strict";
-  var intervals = [];
+  var args = Array.prototype.slice.call(arguments),
+      intervals = getIntervals(args);
 
-  // initialize intervals variable based on arguments
-  if (arguments.length === 0) {
-    throw new TypeError('cycleLength requires at least one argument');
-  }
-  else if ((arguments.length === 1) && (Array.isArray(arguments[0]))) {
-    if (Array.isArray(arguments[0][0])) {
-      intervals = arguments[0];
-    }
-    else {
-      intervals[0] = [
-        arguments[0][0],
-        arguments[0][1]
-      ];
-    }
-  }
-  else {
-    intervals[0] = [
-      arguments[0],
-      arguments[1]
-    ];
-  }
-
-
-  console.log(intervals);
+  // TODO: implement
 }
 
-module.exports = getCycleLength;
+function getMaxCycleLength() {
+  "use strict";
+  var args = Array.prototype.slice.call(arguments),
+      intervals = getIntervals(args),
+      cycleLengths = getCycleLengths(intervals);
+
+  return cycleLengths.length > 0 ?
+      Math.max.apply(Math, cycleLengths) :
+      0;
+}
+
+exports.getCycleLengths = getCycleLengths;
+exports.getMaxCycleLength = getMaxCycleLength;
